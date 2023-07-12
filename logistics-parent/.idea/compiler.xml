@@ -10,6 +10,7 @@
         <module name="logistics-common" />
         <module name="logistics-manager-pojo" />
         <module name="logistics-manager-dao" />
+        <module name="mybatis-generation" />
         <module name="logistics-manager-web" />
       </profile>
     </annotationProcessing>

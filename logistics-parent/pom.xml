@@ -11,6 +11,7 @@
     <modules>
         <module>logistics-common</module>
         <module>logistics-manager</module>
+        <module>mybatis-generation</module>
     </modules>
 
 

@@ -80,18 +80,4 @@ public class User {
     public void setU2(String u2) {
         this.u2 = u2 == null ? null : u2.trim();
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", realName='" + realName + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", phone=" + phone +
-                ", u1='" + u1 + '\'' +
-                ", u2='" + u2 + '\'' +
-                '}';
-    }
 }

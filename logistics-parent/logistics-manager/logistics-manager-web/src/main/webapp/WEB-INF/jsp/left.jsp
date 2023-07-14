@@ -42,8 +42,9 @@
         </div>
         <ul class="menuson">
             <li><cite></cite><a href="index.html" target="rightFrame">首页模版</a><i></i></li>
-            <li class="active"><cite></cite><a href="right.html" target="rightFrame">数据列表</a><i></i></li>
-            <li><cite></cite><a href="imgtable.html" target="rightFrame">图片数据表</a><i></i></li>
+            <li class="active"><cite></cite><a href="user/query" target="rightFrame">用户管理</a><i></i></li>
+            <li><cite></cite><a href="role/query" target="rightFrame">角色管理</a><i></i></li>
+
             <li><cite></cite><a href="form.html" target="rightFrame">添加编辑</a><i></i></li>
             <li><cite></cite><a href="imglist.html" target="rightFrame">图片列表</a><i></i></li>
             <li><cite></cite><a href="imglist1.html" target="rightFrame">自定义</a><i></i></li>

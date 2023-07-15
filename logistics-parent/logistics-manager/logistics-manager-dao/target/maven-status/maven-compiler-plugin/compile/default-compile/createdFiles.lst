@@ -1,0 +1,8 @@
+com\ztx\mapper\UserRoleMapper.class
+com\ztx\mapper\BasicDataMapper.class
+com\ztx\mapper\UserMapper.class
+com\ztx\mapper\MenuMapper.class
+com\ztx\mapper\OrderDetailMapper.class
+com\ztx\mapper\CustomerMapper.class
+com\ztx\mapper\RoleMapper.class
+com\ztx\mapper\OrderMapper.class

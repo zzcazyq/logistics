@@ -32,6 +32,14 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List<User> query(User user) throws Exception {
         UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        if (user != null) {
+            if (user.getUserName() != null && !"".equals(user.getUserName())) {
+                criteria.andUserNameEqualTo(user.getUserName());
+            }
+        }
+        // 查询的是u2不为1的记录
+        criteria.andU2EqualTo("1");
 
         return userMapper.selectByExample(userExample);
     }
@@ -48,11 +56,15 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public Integer deleteUser(Integer id) throws Exception {
-        return userMapper.deleteByPrimaryKey(id);
+        // 更新u2为0
+        User user = userMapper.selectByPrimaryKey(id);
+        user.setU2("0");
+        return userMapper.updateByPrimaryKeySelective(user);
     }
 
     /**
      * 添加用户和更新用户信息
+     *
      * @param dto
      * @return
      * @throws Exception
@@ -63,13 +75,13 @@ public class UserServiceImpl implements IUserService {
         // 1.添加用户信息
         User user = dto.getUser();
 
-        if(user.getUserId() != null ){
+        if (user.getUserId() != null) {
             // 表示是进行用户的更新操作
             this.updateUser(user);
-        }else{
+        } else {
             // 需要对密码加密  MD5加密 + salt(盐值)
             String salt = UUID.randomUUID().toString();
-            Md5Hash passwordHash = new Md5Hash(user.getPassword(),salt);
+            Md5Hash passwordHash = new Md5Hash(user.getPassword(), salt);
             user.setPassword(passwordHash.toString());
             user.setU1(salt);
             this.addUser(user);
@@ -83,7 +95,7 @@ public class UserServiceImpl implements IUserService {
         // 2.分配用户和角色的关联关系
         // 获取分配给当前用户的角色信息
         List<Integer> roleIds = dto.getRoleIds();
-        if(roleIds != null && roleIds.size() > 0){
+        if (roleIds != null && roleIds.size() > 0) {
             // 表示分配的有角色信息
             for (Integer roleId : roleIds) {
                 // 将用户和角色的关联关系保存到 t_user_role 中

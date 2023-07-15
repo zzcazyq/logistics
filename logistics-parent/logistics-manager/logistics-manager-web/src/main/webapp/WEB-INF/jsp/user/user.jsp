@@ -96,9 +96,7 @@
                 <td>${user.phone}</td>
                 <td>
                     <a href="/user/userDispatch?userId=${user.userId}" class="tablelink">更新</a>
-                    <a href="#" class="tablelink">
-                        删除
-                    </a>
+                    <a href="JavaScript:void(0)" onclick="deleteUser(${user.userId})" class="tablelink">删除</a>
                 </td>
             </tr>
         </c:forEach>
@@ -146,6 +144,12 @@
 
 <script type="text/javascript">
     $('.tablelist tbody tr:odd').addClass('odd');
+
+    function deleteUser(userId) {
+        if (window.confirm("确定要删除的编号为：" + userId + "的记录吗？")) {
+            window.location.href = "/user/deleteUser?userId=" + userId;
+        }
+    }
 </script>
 
 <div style="display:none">

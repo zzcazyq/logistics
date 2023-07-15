@@ -49,4 +49,9 @@ public interface IUserService {
      */
     Integer saveOrUpdate(UserDto dto) throws Exception;
 
+    User queryById(Integer userId);
+
+    List<Integer> queryUserRoleIds(Integer userId);
+
+
 }

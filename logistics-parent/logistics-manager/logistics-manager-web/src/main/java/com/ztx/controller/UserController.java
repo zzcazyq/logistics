@@ -30,10 +30,20 @@ public class UserController {
     private IRoleService roleService;
 
     @RequestMapping("/userDispatch")
-    public String userDispatch(Model model) throws  Exception{
+    public String userDispatch(Integer userId,Model model) throws  Exception{
+        if(userId != null && userId > 0){
+            // 当前的请求是要更新用户数据，需要更加用户编号查询出用户的详细信息
+            User user = service.queryById(userId);
+            model.addAttribute("user",user);
+            // 查询出当前用户具有的角色数据
+            List<Integer> ownerRoleIds = service.queryUserRoleIds(userId);
+            model.addAttribute("ownerRoleIds",ownerRoleIds);
+
+        }
         // 查询所有的角色信息
         List<Role> list = roleService.query(new Role());
         model.addAttribute("roles",list);
+
         return "user/updateUser";
     }
 
@@ -51,5 +61,16 @@ public class UserController {
         // 2.保存角色和用户的关联关系
         Integer count = service.saveOrUpdate(dto);
         return "redirect:/user/query";
+    }
+
+    @RequestMapping("/checkUserName")
+    @ResponseBody
+    public String checkUserName(User user) throws Exception{
+        List<User> list = service.query(user);
+        if(list == null || list.size() ==0){
+            // 表示根据提交的账号查询不到数据，说明 账号不存在
+            return "1";
+        }
+        return "0";
     }
 }

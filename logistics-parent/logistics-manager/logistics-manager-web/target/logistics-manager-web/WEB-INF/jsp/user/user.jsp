@@ -94,7 +94,12 @@
                 <td>${user.password}</td>
                 <td>${user.email}</td>
                 <td>${user.phone}</td>
-                <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink"> 删除</a></td>
+                <td>
+                    <a href="/user/userDispatch?userId=${user.userId}" class="tablelink">更新</a>
+                    <a href="#" class="tablelink">
+                        删除
+                    </a>
+                </td>
             </tr>
         </c:forEach>
 

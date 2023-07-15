@@ -50,7 +50,14 @@
     <div class="tools">
 
         <ul class="toolbar">
-            <li class="click"><span><img src="/images/t01.png"/></span>添加</li>
+            <li>
+                <a href="/user/userDispatch">
+                <span>
+                    <img src="/images/t01.png"/>
+                </span>添加
+                </a>
+            </li>
+
             <li class="click"><span><img src="/images/t02.png"/></span>修改</li>
             <li><span><img src="/images/t03.png"/></span>删除</li>
             <li><span><img src="/images/t04.png"/></span>统计</li>

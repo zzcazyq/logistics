@@ -110,7 +110,8 @@
       #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=BIGINT}, 
       #{u1,jdbcType=VARCHAR}, #{u2,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ztx.pojo.User" >
+  <insert id="insertSelective" parameterType="com.ztx.pojo.User"
+  useGeneratedKeys="true" keyProperty="userId">
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >

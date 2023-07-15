@@ -43,7 +43,7 @@
         </javaClientGenerator>
 
 
-        <table  tableName="t_user" domainObjectName="User" schema="logistics"/>
+        <table  tableName="t_user_role" domainObjectName="UserRole" schema="logistics"/>
 <!--        <table  tableName="t_basicData" domainObjectName="BasicData" />-->
 <!--        <table  tableName="t_customer" domainObjectName="Customer" />-->
 <!--        <table  tableName="t_menu" domainObjectName="Menu" />-->

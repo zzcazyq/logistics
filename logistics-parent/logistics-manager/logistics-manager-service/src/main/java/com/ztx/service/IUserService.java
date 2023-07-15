@@ -1,5 +1,6 @@
 package com.ztx.service;
 
+import com.ztx.dto.UserDto;
 import com.ztx.pojo.User;
 
 import java.util.List;
@@ -39,4 +40,13 @@ public interface IUserService {
      * @return
      */
     Integer deleteUser(Integer id) throws Exception;
+
+
+    /**
+     * 添加更新用户信息
+     * @param dto
+     * @return
+     */
+    Integer saveOrUpdate(UserDto dto) throws Exception;
+
 }

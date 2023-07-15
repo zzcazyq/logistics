@@ -55,10 +55,12 @@
     <div class="tools">
 
         <ul class="toolbar">
-            <li class="click"><a href="/role/roleDispatch"></a>
-                <span>
-                    <img src="/images/t01.png"/>
-                </span>添加
+            <li>
+                <a href="/role/roleDispatch">
+                    <span>
+                        <img src="/images/t01.png"/>
+                    </span>添加
+                </a>
             </li>
             <li class="click"><span><img src="/images/t02.png"/></span>修改</li>
             <li><span><img src="/images/t03.png"/></span>删除</li>
